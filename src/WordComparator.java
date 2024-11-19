@@ -12,10 +12,10 @@ public class WordComparator {
      * This method calculates the value of a word.
      * Each letter in the word is assigned a predefined score, and the total value is returned.
      *
-     * @param word the word for which the Scrabble value is calculated
-     * @return the total Scrabble score of the word
+     * @param word the word for which the value is calculated
+     * @return the total score of the word
      */
-    public static int calculateScrabbleValue(String word) {
+    public static int calculateValue(String word) {
         int value = 0;
 
         // Loop through each character in the word and add the appropriate score
@@ -73,13 +73,13 @@ public class WordComparator {
             actualWords[i] = words[i];
         }
 
-        // Sort the words based on their Scrabble value using bubble sort
+        // Sort the words based on their value using bubble sort
         for (int i = 0; i < actualWords.length - 1; i++) {
             for (int j = i + 1; j < actualWords.length; j++) {
-                int score1 = calculateScrabbleValue(actualWords[i]);
-                int score2 = calculateScrabbleValue(actualWords[j]);
+                int score1 = calculateValue(actualWords[i]);
+                int score2 = calculateValue(actualWords[j]);
                 if (score1 > score2) {
-                    // Swap the words based on their Scrabble value
+                    // Swap the words based on their value
                     String temp = actualWords[i];
                     actualWords[i] = actualWords[j];
                     actualWords[j] = temp;
